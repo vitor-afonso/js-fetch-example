@@ -15,12 +15,21 @@ function getLength() {
         // ...sempre que nos é retornado uma "promise" usamos um ".then()"
         .then(function(json){
 
-            document.getElementById("displayLength").innerHTML = "<br>"+json.length+" posts";
-            for(let x = 0; x < json.length; x++) {
-                document.getElementById("displayLength").innerHTML += "<br><br>"+Object.entries(json[x]);
-            } 
+            document.getElementById("displayLength").innerHTML = "<br/>"+json.length+" posts";
+            displayList(json); 
         })
         .catch(function(error){
-            console.log(`Ops! Something went wrong... <br><br>` + error);
+            console.log(`Ops! Something went wrong... <br/><br/>` + error);
         });
+}
+
+function displayList(myList) {
+
+    let html = '';
+    for (let i in myList) {
+        html += "<br><h3>"+myList[i].title+"</h3><br/>";
+        html += myList[i].body+"<br/>";
+        html += "<hr/>";
+        document.getElementById("displayLength").innerHTML += html;
+    }
 }
