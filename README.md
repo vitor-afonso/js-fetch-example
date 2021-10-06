@@ -2,4 +2,4 @@
 Testing how to handle requisitions with fetch.
 
 
-[**Check it here**]()  
+[**Check it here**](https://vitor-afonso.github.io/js-fetch-example/)  
